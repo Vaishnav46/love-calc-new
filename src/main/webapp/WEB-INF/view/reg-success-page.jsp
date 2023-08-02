@@ -25,7 +25,10 @@
 		
 		</p>
 		<p> Gender : ${regDto.gender} </p>
-				
+		
+		<p>Email : ${regDto.communicationDto.email}</p>
+		
+		<p>Phone Number : ${regDto.communicationDto.phone} </p>		
 		
 		
 	</div>

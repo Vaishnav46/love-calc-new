@@ -14,7 +14,7 @@
 	<div align="center"
 		style="border: inherit; border-style: double; border-radius: inherit;border-color: cyan;">
 
-		<form:form action="regSuccess"  bmodelAttribute="regDto">
+		<form:form action="regSuccess"  modelAttribute="regDto">
 			<p>
 				<label for="regName">Name:</label>
 				<form:input path="name" id="regName" />
@@ -58,6 +58,15 @@
 				Female
 				<form:radiobutton path="gender" id="regGender" value="female" />
 			</p>
+			
+			<div align="center">
+				<h1>Communication Details</h1>
+				<label>Email:</label>
+				<form:input path="communicationDto.email"/>
+				
+				<label>Phone:</label>
+				<form:input path="communicationDto.phone"/>
+			</div>
 			<p>
 				<input type="submit" value="Register">
 			</p>

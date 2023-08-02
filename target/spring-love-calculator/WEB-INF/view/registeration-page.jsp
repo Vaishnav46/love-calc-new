@@ -14,7 +14,7 @@
 	<div align="center"
 		style="border: inherit; border-style: double; border-radius: inherit;border-color: cyan;">
 
-		<form:form action="regSuccess" modelAttribute="regDto">
+		<form:form action="regSuccess"  bmodelAttribute="regDto">
 			<p>
 				<label for="regName">Name:</label>
 				<form:input path="name" id="regName" />

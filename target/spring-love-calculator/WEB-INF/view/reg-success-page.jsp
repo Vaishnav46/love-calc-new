@@ -18,7 +18,9 @@
 		<p> Hobbies : 
 		
 		<c:forEach var="hobby" items="${regDto.hobbies}">
-			${hobby}
+			<div>
+			${hobby} <br/>
+			</div>
 		</c:forEach>
 		
 		</p>

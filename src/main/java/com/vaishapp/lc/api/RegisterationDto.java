@@ -10,6 +10,8 @@ public class RegisterationDto {
 	private String country;
 	private String[] hobbies;
 	private String gender;
+	
+	private CommunicationDto communicationDto;
 
 	public String getName() {
 		return name;
@@ -63,6 +65,14 @@ public class RegisterationDto {
 	public String toString() {
 		return "RegisterationDto [name=" + name + ", userName=" + userName + ", password=" + password + ", country="
 				+ country + ", hobbies=" + Arrays.toString(hobbies) + ", gender=" + gender + "]";
+	}
+
+	public CommunicationDto getCommunicationDto() {
+		return communicationDto;
+	}
+
+	public void setCommunicationDto(CommunicationDto communicationDto) {
+		this.communicationDto = communicationDto;
 	}
 
 }
