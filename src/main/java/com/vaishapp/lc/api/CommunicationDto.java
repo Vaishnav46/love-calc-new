@@ -1,10 +1,12 @@
 package com.vaishapp.lc.api;
 
-import org.springframework.stereotype.Component;
+import com.vaishapp.lc.validators.PhoneNoSize;
 
 public class CommunicationDto {
 
 	private String email;
+
+	@PhoneNoSize(size = 10 , message = "*enter 10 numbers and not null")
 	private Phone phone;
 
 	public String getEmail() {

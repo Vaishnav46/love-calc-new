@@ -1,7 +1,5 @@
 package com.vaishapp.lc.api;
 
-import org.springframework.stereotype.Component;
-
 public class Phone {
 
 	private String countryCode;

@@ -2,15 +2,23 @@ package com.vaishapp.lc.api;
 
 import java.util.Arrays;
 
+import javax.validation.constraints.NotEmpty;
+
+import com.vaishapp.lc.validators.Age;
+
 public class RegisterationDto {
 
+	@NotEmpty(message = "*Name cannot be empty")
 	private String name;
 	private String userName;
 	private char[] password;
 	private String country;
 	private String[] hobbies;
 	private String gender;
-	
+
+	@Age
+	private Integer age;
+
 	private CommunicationDto communicationDto;
 
 	public String getName() {
@@ -61,18 +69,27 @@ public class RegisterationDto {
 		this.gender = gender;
 	}
 
-	@Override
-	public String toString() {
-		return "RegisterationDto [name=" + name + ", userName=" + userName + ", password=" + password + ", country="
-				+ country + ", hobbies=" + Arrays.toString(hobbies) + ", gender=" + gender + "]";
-	}
-
 	public CommunicationDto getCommunicationDto() {
 		return communicationDto;
 	}
 
 	public void setCommunicationDto(CommunicationDto communicationDto) {
 		this.communicationDto = communicationDto;
+	}
+
+	public Integer getAge() {
+		return age;
+	}
+
+	public void setAge(Integer age) {
+		this.age = age;
+	}
+
+	@Override
+	public String toString() {
+		return "RegisterationDto [name=" + name + ", userName=" + userName + ", password=" + Arrays.toString(password)
+				+ ", country=" + country + ", hobbies=" + Arrays.toString(hobbies) + ", gender=" + gender + ", age="
+				+ age + ", communicationDto=" + communicationDto + "]";
 	}
 
 }
