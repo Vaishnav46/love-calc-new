@@ -1,7 +1,13 @@
 package com.vaishapp.lc.controllers;
 
+import java.util.List;
+
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -17,25 +23,23 @@ public class LcAppController {
 	}
 	
 	@RequestMapping("/processHomePage")
-	public String processHomePage(UserInfoDto userInfoDto,Model model) {
+	public String processHomePage(@Valid @ModelAttribute("userInfo") UserInfoDto userInfoDto,BindingResult result) {
 		
 //		System.out.println(userName);
 //		System.out.println(crushName);
 //		model.addAttribute("userName", userInfoDto.getUserName());
 //		model.addAttribute("crushName", userInfoDto.getCrushName());
 		
-		System.out.println("from dto " +userInfoDto.getCrushName() + userInfoDto.getUserName());
-		model.addAttribute("userInfo",userInfoDto);
+		if(result.hasErrors()) {
+			System.out.println("result has errors");
+			List<ObjectError> allErrors = result.getAllErrors();
+			for(ObjectError temp : allErrors) {
+				System.out.println(temp);
+			}
+			return "home";
+		}
 		return "result";
 	}
 	
-	@RequestMapping("/registration-page")
-	public String registrationPage(@ModelAttribute("regDto") RegisterationDto regDto) {
-		return "registeration-page";
-	}
 	
-	@RequestMapping("regSuccess")
-	public String regSuccessPage(@ModelAttribute("regDto") RegisterationDto regDto) {
-		return "reg-success-page";
-	}
 }

@@ -7,10 +7,20 @@
 <title>Result Page</title>
 </head>
 <body>
-<h1>This is the Result page</h1>
+<h1 align="center">Love Calculator App</h1>
+<Hr>
 
-<p>Your Name entered is :${userInfo.userName}</p>
+<br/>
+<h2>
+The Love Calculator predicts :
+</h2>
+${userInfo.userName} and ${userInfo.crushName} are :
+<br/>
+Friends
 
-<p>Your crush Name entered is :${userInfo.crushName}</p>
+
+<br/>
+
+<a href="/spring-love-calculator/sendEmail">Send result to your mail</a>
 </body>
 </html>

@@ -18,12 +18,19 @@
 		<p> Hobbies : 
 		
 		<c:forEach var="hobby" items="${regDto.hobbies}">
-			${hobby}
+			<div>
+			${hobby} <br/>
+			</div>
 		</c:forEach>
 		
 		</p>
 		<p> Gender : ${regDto.gender} </p>
-				
+		
+		<p> Age : ${regDto.age} </p>
+		
+		<p>Email : ${regDto.communicationDto.email}</p>
+		
+		<p>Phone Number : ${regDto.communicationDto.phone} </p>		
 		
 		
 	</div>
