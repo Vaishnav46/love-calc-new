@@ -39,39 +39,39 @@ public class RegisterationController {
 	}
 
 	@RequestMapping("regSuccess")
-	public String regSuccessPage(@Valid @ModelAttribute("regDto") RegisterationDto regDto,BindingResult result) {
+	public String regSuccessPage(@Valid @ModelAttribute("regDto") RegisterationDto regDto, BindingResult result) {
 
 		System.out.println("name value enter is " + "|" + regDto.getName() + "|");
-		
-		if(result.hasErrors()) {
+
+		if (result.hasErrors()) {
 			List<ObjectError> allErrors = result.getAllErrors();
-			
-			for(Object error:allErrors) {
-				System.out.println("error occured : "+ error);
+
+			for (Object error : allErrors) {
+				System.out.println("error occured : " + error);
 			}
-			
+
 			return "registeration-page";
 		}
 		System.out.println("Inside RegSuccess page");
 		return "reg-success-page";
 	}
-	
+
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
-		
-		//binder.setDisallowedFields("userName");
+
+		// binder.setDisallowedFields("userName");
 		StringTrimmerEditor trimmer = new StringTrimmerEditor(true);
 		binder.registerCustomEditor(String.class, "name", trimmer);
-		
+
 		NamePropertyEditor namePropertyEditor = new NamePropertyEditor();
-		binder.registerCustomEditor(String.class,"name",namePropertyEditor);
-		
+		binder.registerCustomEditor(String.class, "name", namePropertyEditor);
+
 		// custom editor
-		binder.registerCustomEditor(String.class,"userName",namePropertyEditor);
-		
-		//validator
+		binder.registerCustomEditor(String.class, "userName", namePropertyEditor);
+
+		// validator
 		binder.addValidators(new UserNameValidator());
-		
+
 		binder.addValidators(new EmailValidation());
 	}
 

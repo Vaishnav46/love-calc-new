@@ -12,7 +12,7 @@
 	<h1 align="center">Love Calculator App</h1>
 	<hr>
 
-	<h1>Hi</h1>
+	<h1>Hi ${userInfo.userName}</h1>
 
 	<h2>Send result to your email</h2>
 	<form:form action="processEmail" method="GET" modelAttribute="emailDto">

@@ -9,15 +9,16 @@
 </head>
 <body>
 
-	<h1 align="center">Love Calculator</h1>
+	<h1 align="center">Love Calculator App</h1>
 	<hr>
 
-	<h2>Hi</h2>
+	<h1>Hi ${userInfo.userName}</h1>
 
+	<h2>Send result to your email</h2>
 	<form:form action="processEmail" method="GET" modelAttribute="emailDto">
 	
 		<label>Enter your email</label>
-		<form:input path="emailDto.email"/>
+		<form:input path="userEmail"/>
 		
 		<input type="submit" value = "Send">
 	
