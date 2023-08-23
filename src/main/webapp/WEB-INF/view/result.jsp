@@ -16,7 +16,7 @@ The Love Calculator predicts :
 </h2>
 ${userInfo.userName} and ${userInfo.crushName} are :
 <br/>
-Friends
+${finalResult}
 
 
 <br/>
